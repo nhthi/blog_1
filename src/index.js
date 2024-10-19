@@ -16,14 +16,10 @@ app.set("views",path.join(__dirname,'resources/views'))
 
 app.use(express.static(path.join(__dirname,"public")))
 
+const route = require('./routes')
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
+route(app)
 
-app.get('/news', (req, res) => {
-  res.render('news')
-})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
